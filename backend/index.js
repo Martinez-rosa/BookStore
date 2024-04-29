@@ -14,14 +14,14 @@ app.use(express.json());
 //Option 1: Allow All Origins with Default of cors (*)
 app.use(cors());
 //Option 2: Allow Custom Orings 
-app.use(
-    cors({
-        oring: 'http://localhost:3000',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type'],
+//app.use(
+//    cors({
+//       oring: 'http://localhost:3000',
+//        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//      allowedHeaders: ['Content-Type'],
 
-    })
-)
+//    })
+//)
 
 
 
