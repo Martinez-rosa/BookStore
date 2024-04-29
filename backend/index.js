@@ -6,6 +6,10 @@ import cors from 'cors';
 
 const app = express();
 
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
+
 // Middleware for parsing request body
 app.use(express.json());
 
@@ -23,7 +27,7 @@ app.use(cors());
 
 app.get('/', (request, response) => {
   console.log(request);
-  return response.status(234).send('Welcome To the Book Store');
+  return response.status(234).send('Welcome To MERN Stack Tutorial');
 });
 
 app.use('/books', booksRoute);

@@ -30,7 +30,7 @@ const BookModal = ({ book, onClose }) => {
         </div>
         <p className='mt-4'>Books</p>
         <p className='my-2'>
-        Book Modal Component in a Bookstore Project
+         Book Modal Component in a Bookstore Project
         </p>
       </div>
     </div>
