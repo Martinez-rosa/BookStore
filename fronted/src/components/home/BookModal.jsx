@@ -28,7 +28,7 @@ const BookModal = ({ book, onClose }) => {
           <BiUserCircle className='text-red-300 text-2xl' />
           <h2 className='my-1'>{book.author}</h2>
         </div>
-        <p className='mt-4'>Anything You want to show</p>
+        <p className='mt-4'>Books</p>
         <p className='my-2'>
         Book Modal Component in a Bookstore Project
         </p>
