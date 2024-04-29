@@ -1,43 +1,37 @@
-import express from "express";
-import { PORT } from "./config.js";
-import mongoose from "mongoose";
-import { Book } from "./models/bookModel.js";
-import booksRoute from "./routes/booksRoute.js";
-import cors from "cors";
-
-
- const mongoDBURL =
-  "mongodb+srv://root:root@bookstore.ef19wxl.mongodb.net/?retryWrites=true&w=majority&appName=BookStore";
+import express from 'express';
+import { PORT, mongoDBURL } from './config.js';
+import mongoose from 'mongoose';
+import booksRoute from './routes/booksRoute.js';
+import cors from 'cors';
 
 const app = express();
 
-//Middleware for parsing request body
+// Middleware for parsing request body
 app.use(express.json());
 
-//Middleware for handling CORS POLICY
-//Option 1: Allow All Origins with Default of cors (*)
+// Middleware for handling CORS POLICY
+// Option 1: Allow All Origins with Default of cors(*)
 app.use(cors());
-//Option 2: Allow Custom Orings
-//app.use(
-//    cors({
-//       oring: 'http://localhost:3000',
-//        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//      allowedHeaders: ['Content-Type'],
+// Option 2: Allow Custom Origins
+// app.use(
+//   cors({
+//     origin: 'http://localhost:3000',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type'],
+//   })
+// );
 
-//    })
-//)
-
-app.get("/", (request, response) => {
+app.get('/', (request, response) => {
   console.log(request);
-  return response.status(235).send("Welcome to Book Store by Maura Martinez");
+  return response.status(234).send('Welcome To MERN Stack Tutorial');
 });
 
-app.use("/books", booksRoute);
+app.use('/books', booksRoute);
 
 mongoose
   .connect(mongoDBURL)
   .then(() => {
-    console.log("App connected to databse");
+    console.log('App connected to database');
     app.listen(PORT, () => {
       console.log(`App is listening to port: ${PORT}`);
     });
