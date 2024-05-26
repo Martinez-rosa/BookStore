@@ -1,4 +1,4 @@
 export const PORT = 5555;
 
 export const mongoDBURL =
-"mongodb+srv://root:root@bookstore.ef19wxl.mongodb.net/?retryWrites=true&w=majority&appName=BookStore";
+"mongodb://localhost:27017/bookstore";
